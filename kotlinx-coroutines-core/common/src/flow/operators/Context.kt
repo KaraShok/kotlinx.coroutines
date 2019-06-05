@@ -36,7 +36,7 @@ import kotlinx.coroutines.flow.unsafeFlow as flow
  *
  * @throws [IllegalArgumentException] if provided context contains [Job] instance.
  */
-@FlowPreview
+@ExperimentalCoroutinesApi
 public fun <T> Flow<T>.flowOn(flowContext: CoroutineContext, bufferSize: Int = 16): Flow<T> {
     check(flowContext, bufferSize)
     return flow {

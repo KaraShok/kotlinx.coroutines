@@ -109,7 +109,7 @@ public fun <T> Flow<Flow<T>>.flattenMerge(concurrency: Int = 16, bufferSize: Int
  * ```
  * produces `aa bb b_last`
  */
-@FlowPreview
+@ExperimentalCoroutinesApi
 public fun <T, R> Flow<T>.switchMap(transform: suspend (value: T) -> Flow<R>): Flow<R> = flow {
     coroutineScope {
         var previousFlow: Job? = null
